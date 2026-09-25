@@ -138,15 +138,5 @@ iris-classification/
     └── script.js                  Frontend logic (form validation, API calls)
 ```
 
----
 
-## 11. How to Install
-
-Make sure you have **Python 3.9+** installed. Then, from the project folder, install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
----
 
