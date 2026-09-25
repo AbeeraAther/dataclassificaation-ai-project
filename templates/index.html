@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Iris Flower Classification | KNN</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+
+        <header class="header">
+            <h1>🌸 Iris Flower Classification</h1>
+            <p class="subtitle">Predict the Iris species using a K-Nearest Neighbors (KNN) model</p>
+        </header>
+
+        <div class="content">
+
+            <div class="card">
+                <h2>Enter Flower Measurements</h2>
+                <p class="card-description">
+                    Provide the four measurements below (in centimeters) and the model
+                    will predict whether the flower is a Setosa, Versicolor, or Virginica.
+                </p>
+
+                <form id="prediction-form">
+                    <div class="form-group">
+                        <label for="sepal_length">Sepal Length (cm)</label>
+                        <input type="number" step="0.1" id="sepal_length" name="sepal_length"
+                               placeholder="e.g. 5.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="sepal_width">Sepal Width (cm)</label>
+                        <input type="number" step="0.1" id="sepal_width" name="sepal_width"
+                               placeholder="e.g. 3.5" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="petal_length">Petal Length (cm)</label>
+                        <input type="number" step="0.1" id="petal_length" name="petal_length"
+                               placeholder="e.g. 1.4" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="petal_width">Petal Width (cm)</label>
+                        <input type="number" step="0.1" id="petal_width" name="petal_width"
+                               placeholder="e.g. 0.2" required>
+                    </div>
+
+                    <button type="submit" id="predict-btn">Predict Species</button>
+                </form>
+
+                <div id="error-box" class="error-box hidden"></div>
+            </div>
+
+            <div class="card result-card">
+                <h2>Prediction Result</h2>
+
+                <div id="result-placeholder" class="result-placeholder">
+                    <p>👈 Fill in the measurements and click "Predict Species" to see the result here.</p>
+                </div>
+
+                <div id="result-content" class="result-content hidden">
+                    <div class="result-icon" id="result-icon">🌼</div>
+                    <h3 id="result-species">-</h3>
+                    <p class="confidence-text">Model confidence: <span id="result-confidence">-</span>%</p>
+
+                    <div class="probability-bars" id="probability-bars">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <p>Built with Flask, Scikit-learn &amp; KNN (K=5) &middot; Educational Project</p>
+        </footer>
+
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
